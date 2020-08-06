@@ -1,0 +1,94 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #49cfae;
+  font-family: "Ariel"
+}
+
+.clock{
+  width: 350px;
+  height: 100px;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.clock::before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 5px;
+  background: #ee4136;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
+}
+
+.clock .clock-body{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: #434a54;
+  display: flex;
+  padding: 0 21px;
+  position: relative;
+}
+
+.clock .clock-body::before{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 9px;
+  background: #3e3e40;
+  left: 14px;
+  bottom: -19px;
+  border-radius: 0 0 5px 5px;
+} 
+
+.clock .clock-body::after{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 9px;
+  background: #3e3e40;
+  right: 14px;
+  bottom: -19px;
+  border-radius: 0 0 5px 5px;
+} 
+
+
+.clock .clock-body>div{
+  color: #69ff74;
+  font-size: 70px;
+  line-height: 1.2;
+  letter-spacing: 6px;
+  
+}
+
+#seconds {
+  opacity: 0;
+  animation: animate 1s infinite;
+}
+
+@keyframes animate{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1; 
+  }
+  100%{
+    opacity: 0;
+  }
+}
